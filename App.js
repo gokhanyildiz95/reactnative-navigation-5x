@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => (
   <View>
     <Text>Home</Text>
     <Button
-    title="deneme" 
+    title="Go To Detail" 
     onPress={() => navigation.navigate('Detail')}
     />
   </View>
