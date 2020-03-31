@@ -1,50 +1,35 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {StyleSheet, Text, View, Button, RefreshControlComponent, requireNativeComponent} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  RefreshControlComponent,
+  requireNativeComponent,
+} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import Search from './src/components/Search';
+import HomeScreen from './src/pages/HomeScreen';
+import ProfileScreen from './src/pages/ProfileScreen';
 
 const Stack = createStackNavigator();
-const HomeScreen = ({navigation}) => (
-  <View>
-    <Text>Home</Text>
-    <Button
-    title="Go To Detail" 
-    onPress={() => navigation.navigate('Detail')}
-    />
-  </View>
-)
-
-
-const DetailScreen = (props) => (
-  <View>
-    <Text>Detail</Text>
-  </View>
-)
-
-
 export default function App() {
-  return <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Detail" component={DetailScreen} />
-    </Stack.Navigator>
-  </NavigationContainer>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: '#ffff',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
-
